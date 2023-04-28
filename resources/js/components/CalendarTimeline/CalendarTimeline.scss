@@ -1,0 +1,119 @@
+// Variables
+$border-color: #f1f1f1;
+$border-color-dark: #dfdfdf;
+$border-color-darker: #f9f9f9;
+$background-white: #fff;
+$background-yellow: #e7b95d;
+$background-dark: #1e1e1e;
+
+// CalendarTimeline SCSS
+.calendar-timeline {
+    .sticky {
+        position: sticky;
+        top: 0;
+        z-index: 2000;
+    }
+    .logo {
+        display: flex;
+        justify-content: center;
+        background: $background-white;
+
+        img {
+            max-width: 50px;
+        }
+    }
+
+    // React calendar overrides
+    .react-calendar-timeline {
+        .rct-header-root {
+            border-bottom: none;
+            box-shadow: 0px 0px 6px rgba(0, 0, 0, .25);
+            background: $background-white;
+        }
+        .rct-calendar-header {
+            border: none;
+        }
+        .rct-dateHeader {
+            background: #fff;
+            border-left: 1px solid $border-color;
+            border-bottom: none;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: background .3s ease-in-out;
+
+            &.rct-dateHeader-primary {
+                background: #fff;
+                color: #000;
+                font-weight: 500;
+                border-right: none;
+                border-bottom: 1px solid $border-color;
+                transition: background .3s ease-in-out;
+            }
+
+            &:hover,
+            &.rct-dateHeader-primary:hover {
+                background: #eaeaea;
+            }
+        }
+
+        .rct-sidebar {
+            z-index: 1;
+            border: none;
+            box-shadow: 0px 0px 6px rgba(0, 0, 0, .25);
+
+            .rct-sidebar-row {
+                &.rct-sidebar-row-odd,
+                &.rct-sidebar-row-even {
+                    padding: 0;
+                    text-align: center;
+                    font-size: 12px;
+                    font-weight: 600;
+                    background: #fff;
+                    border-bottom: 1px solid $border-color;
+                }
+            }
+        }
+        .rct-vertical-lines {
+            .rct-vl {
+                border-left: 1px solid $border-color;
+                &.rct-vl-first {
+                    border-color: $border-color;
+                    border-left-width: 1px;
+                }
+            }
+        }
+        .rct-horizontal-lines {
+            .rct-vl {
+                border-left: 1px solid $border-color;
+                &.rct-day-0,
+                &.rct-day-6 {
+                    background: #f1f1f1;
+                }
+                &.rct-vl-first {
+                    border-left-width: 1px;
+                }
+            }
+            .rct-hl-even,
+            .rct-hl-odd {
+                background: $border-color-darker;
+                border-bottom: 1px solid $border-color;
+            }
+        }
+        .rct-item {
+            border-radius: 4px;
+        }
+        .group-toggle {
+            text-transform: uppercase;
+            background: $background-dark;
+            color: $background-white;
+            transition: all .3s ease-in-out;
+
+            &:hover {
+                cursor: pointer;
+                color: #000;
+                background: $background-yellow;
+            }
+        }
+    }
+}
